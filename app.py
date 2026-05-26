@@ -24,10 +24,10 @@ st.markdown("""
 # ── Load Data ──────────────────────────────────────────────────────────────────
 @st.cache_data
 def load_data():
-    users        = pd.read_csv("data/Users.csv")
-    teachers     = pd.read_csv("data/Teachers.csv")
-    courses      = pd.read_csv("data/Courses.csv")
-    transactions = pd.read_csv("data/Transactions.csv")
+  users        = pd.read_csv("Users.csv")
+teachers     = pd.read_csv("Teachers.csv")
+courses      = pd.read_csv("Courses.csv")
+transactions = pd.read_csv("Transactions.csv")
 
     enroll       = transactions.groupby("CourseID").size().reset_index(name="EnrollmentCount")
     revenue      = transactions.groupby("CourseID")["Amount"].sum().reset_index(name="CourseRevenue")
